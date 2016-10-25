@@ -1,0 +1,32 @@
+@import "normalize";
+@import "variables";
+
+header {
+    line-height: 50px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.button-group {
+    display: flex;
+
+    .button {
+        text-decoration: none;
+        width: 33.3%;
+        display: block;
+        text-align: center;
+
+        svg {
+            height: 100px;
+            width: 54px;
+        }
+
+        &:hover,
+        &:active {
+            polygon,
+            path {
+                fill: $color-hover;
+            }
+        }
+    }
+}
