@@ -12,16 +12,30 @@ import PerfectHTTPServer
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
+    let port:UInt16 = 8181
+    
     var server: HTTPServer!
     var statusItem: NSStatusItem!
     
+    @IBOutlet weak var infoTextOutlet: NSTextField!
     @IBOutlet weak var window: NSWindow!
     @IBOutlet weak var commandOutlet: NSTextField!
-
+    @IBAction func openButtonClicked(_ sender: AnyObject) {
+        openLinkInBrowser()
+    }
+    
+    var address: String {
+        get {
+            let addresses = NetworkService.getIpAddresses()
+            
+            return addresses.first!
+        }
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.commandOutlet.stringValue = ""
         
-        let server = ServerBootstrap.create(withDocumentRoot:Bundle.main.resourcePath! + "/WebApp/dist") {
+        let server = ServerBootstrap.create(withDocumentRoot:Bundle.main.resourcePath! + "/WebApp/dist", onPort: self.port) {
             key, sent in
             print("Received \(key)")
             DispatchQueue.main.async {
@@ -31,6 +45,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         ServerBootstrap.startServerOnNewThread(server)
         
         createStatusItem()
+        prepareInfoText()
+    }
+    
+    func prepareInfoText() {
+        infoTextOutlet.stringValue = "Waiting to serve you on http://\(self.address):\(self.port)/"
     }
     
     func receivedCommand(_ key: String, _ sent: Bool) {
@@ -58,13 +77,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.alternateImage = #imageLiteral(resourceName: "StatusBarIconOutline")
         
         statusItem.action = #selector(AppDelegate.clickedStatusItem(_:))
-        
-        print(statusItem.button, statusItem.isEnabled)
     }
     
     func clickedStatusItem(_ sender: AnyObject) {
-        print("hello")
+        print("Clicked status item")
+        openLinkInBrowser()
     }
+    
+    func openLinkInBrowser() {
+        print("Open http://\(self.address):\(self.port)/")
+        let url = URL(string: "http://\(self.address):\(self.port)/")
+        
+        NSWorkspace.shared().open(url!)
+    }
+    
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application

@@ -111,15 +111,16 @@ struct ServerBootstrap {
         }
     }
     
-    public static func create(withDocumentRoot documentRoot: String, receivedCommandCallback: @escaping ReceivedCommandCallback) -> HTTPServer {
-        // Create HTTP server.
-        let server = HTTPServer()
+    public static func create(
+        withDocumentRoot documentRoot: String,
+        onPort port:UInt16 = 8181,
+        receivedCommandCallback: @escaping ReceivedCommandCallback
+        ) -> HTTPServer {
         
+        let server = HTTPServer()
+        server.serverPort = port
         self.configureRoutes(server, receivedCommandCallback:receivedCommandCallback)
         
-        
-        // Set a listen port of 8181
-        server.serverPort = 8181
         
         // Set a document root.
         // This is optional. If you do not want to serve static content then do not set this.

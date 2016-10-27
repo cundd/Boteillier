@@ -8,7 +8,7 @@ func prompt() {
 
 prompt()
 
-ServerBootstrap.create()
+_ = ServerBootstrap.create(withDocumentRoot: "", receivedCommandCallback: {_,_ in })
 
 prompt()
 while let response = readLine(strippingNewline: true) {

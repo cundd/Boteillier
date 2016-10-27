@@ -15,6 +15,8 @@
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BoteillierUI" customModuleProvider="target">
             <connections>
                 <outlet property="commandOutlet" destination="wlH-am-Xxs" id="UrO-Re-dqA"/>
+                <outlet property="infoTextOutlet" destination="n8O-mN-Rmj" id="0Pr-Ec-2oH"/>
+                <outlet property="openButtonClicked" destination="Dml-dr-vFA" id="xP8-ce-Cnh"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -421,41 +423,55 @@
         <window title="BoteillierUI" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="57"/>
+            <rect key="contentRect" x="335" y="390" width="405" height="57"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="57"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n8O-mN-Rmj">
-                        <rect key="frame" x="18" y="20" width="214" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Waiting to serve you" id="iLb-Bi-V4E">
+                        <rect key="frame" x="18" y="20" width="128" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Waiting to serve you" allowsEditingTextAttributes="YES" id="iLb-Bi-V4E">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-am-Xxs">
-                        <rect key="frame" x="248" y="20" width="214" height="17"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="cmd" id="lXl-Fh-cYS">
+                        <rect key="frame" x="319" y="20" width="68" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="64" id="V1X-lw-5De"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="shift arrow" id="lXl-Fh-cYS">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dml-dr-vFA">
+                        <rect key="frame" x="220" y="11" width="73" height="32"/>
+                        <buttonCell key="cell" type="push" title="ffopen" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="DXp-Cf-xmi">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="openButtonClicked:" target="Voe-Tx-rLC" id="uXd-jr-iVX"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="n8O-mN-Rmj" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="2rS-nB-off"/>
-                    <constraint firstItem="wlH-am-Xxs" firstAttribute="leading" secondItem="n8O-mN-Rmj" secondAttribute="trailing" constant="20" id="6iL-Tn-QnD"/>
                     <constraint firstItem="wlH-am-Xxs" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="7hy-n4-IT3"/>
                     <constraint firstAttribute="bottom" secondItem="wlH-am-Xxs" secondAttribute="bottom" constant="20" id="BQ8-Ng-uSl"/>
+                    <constraint firstItem="wlH-am-Xxs" firstAttribute="leading" secondItem="Dml-dr-vFA" secondAttribute="trailing" constant="10" id="Miv-8K-LVI"/>
                     <constraint firstItem="n8O-mN-Rmj" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="PLO-T4-1Du"/>
-                    <constraint firstItem="n8O-mN-Rmj" firstAttribute="width" secondItem="wlH-am-Xxs" secondAttribute="width" id="UFR-Qm-AYJ"/>
+                    <constraint firstItem="Dml-dr-vFA" firstAttribute="centerY" secondItem="n8O-mN-Rmj" secondAttribute="centerY" id="h35-w4-Vgb"/>
+                    <constraint firstItem="Dml-dr-vFA" firstAttribute="leading" secondItem="n8O-mN-Rmj" secondAttribute="trailing" constant="10" id="qAE-gs-IHl"/>
                     <constraint firstAttribute="trailing" secondItem="wlH-am-Xxs" secondAttribute="trailing" constant="20" id="swA-tv-cua"/>
                     <constraint firstAttribute="bottom" secondItem="n8O-mN-Rmj" secondAttribute="bottom" constant="20" id="urw-mT-uLR"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="132" y="-121.5"/>
+            <point key="canvasLocation" x="-5.5" y="-121.5"/>
         </window>
     </objects>
 </document>
