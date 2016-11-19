@@ -17,7 +17,6 @@ export default class Controller {
 
     addEventListeners() {
         let _click = this.click.bind(this);
-        console.log(this.controls);
 
         this.controls.forEach(function (control) {
             control.addEventListener('click', function (event) {
@@ -28,7 +27,6 @@ export default class Controller {
 
     click(event, element) {
         const action = element.dataset.action;
-        console.log(element.dataset.action, this);
         RemoteService.send(this.keyMap[action]);
     }
 }
