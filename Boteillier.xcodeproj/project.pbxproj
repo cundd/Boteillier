@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6557039F1DE0798F0089E887 /* Boteillier-Briding-Header.m in Sources */ = {isa = PBXBuildFile; fileRef = 6557039E1DE0798F0089E887 /* Boteillier-Briding-Header.m */; };
 		655703A71DE07AC70089E887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655703A61DE07AC70089E887 /* AppDelegate.swift */; };
 		655703A91DE07AC70089E887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 655703A81DE07AC70089E887 /* Assets.xcassets */; };
 		655703AC1DE07AC70089E887 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655703AA1DE07AC70089E887 /* MainMenu.xib */; };
@@ -955,7 +954,6 @@
 
 /* Begin PBXFileReference section */
 		6557039D1DE0798F0089E887 /* Boteillier-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Boteillier-Bridging-Header.h"; sourceTree = "<group>"; };
-		6557039E1DE0798F0089E887 /* Boteillier-Briding-Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Boteillier-Briding-Header.m"; sourceTree = "<group>"; };
 		655703A41DE07AC70089E887 /* BoteillierUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoteillierUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		655703A61DE07AC70089E887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		655703A81DE07AC70089E887 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -2630,7 +2628,6 @@
 			isa = PBXGroup;
 			children = (
 				65FDF71F1DDCE76A000D5D0A /* Boteillier-Bridging-Header.h */,
-				6557039E1DE0798F0089E887 /* Boteillier-Briding-Header.m */,
 				OBJ_736 /* KeyCode.swift */,
 				OBJ_737 /* KeySender.swift */,
 				OBJ_738 /* main.swift */,
@@ -3050,7 +3047,6 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_1554 /* KeyCode.swift in Sources */,
-				6557039F1DE0798F0089E887 /* Boteillier-Briding-Header.m in Sources */,
 				OBJ_1555 /* KeySender.swift in Sources */,
 				OBJ_1556 /* main.swift in Sources */,
 				OBJ_1557 /* NetworkService.swift in Sources */,

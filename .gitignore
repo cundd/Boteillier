@@ -1,5 +1,5 @@
-.DS_Store
-/.build
-/Packages
-/*.xcodeproj/xcuserdata
+/*.xcodeproj/project.xcworkspace/xcuserdata
+/*.xcodeproj/xcuserdata/
 node_modules
+.build
+/Packages
