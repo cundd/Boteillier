@@ -1,7 +1,7 @@
 module.exports = {
     entry: "./JavaScripts/main.js",
     output: {
-        path: __dirname + "/../dist/js",
+        path: __dirname + "/../WebAppDist/js",
         filename: "main.js"
     },
     module: {
