@@ -27,6 +27,11 @@ export default class Controller {
 
     click(event, element) {
         const action = element.dataset.action;
-        RemoteService.send(this.keyMap[action]);
+        RemoteService.send(this.keyMap[action], () => console.log(arguments), function (request) {
+            const messageOutlet = document.querySelector('[data-outlet="message"]');
+            if (messageOutlet) {
+                messageOutlet.innerText = 'ERROR: ' + request.statusText;
+            }
+        });
     }
 }

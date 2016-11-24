@@ -1,10 +1,20 @@
 @import "normalize";
 @import "variables";
 
+body {
+    background: black;
+    color: $color;
+}
+
 header {
     line-height: 50px;
     font-size: 24px;
     text-align: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .button-group {
@@ -21,7 +31,11 @@ header {
             width: 54px;
         }
 
-        &:hover,
+        polygon,
+        path {
+            fill: $color;
+        }
+
         &:active {
             polygon,
             path {
@@ -29,4 +43,14 @@ header {
             }
         }
     }
+}
+
+.message-container {
+    padding: 20px;
+    text-align: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

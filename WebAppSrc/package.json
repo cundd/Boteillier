@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --progress -p",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "server": "webpack-dev-server"
   },
   "keywords": [
     "macos",

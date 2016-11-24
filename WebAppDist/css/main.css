@@ -356,10 +356,18 @@ td,
 th {
   padding: 0; }
 
+body {
+  background: black;
+  color: #ff0f4d; }
+
 header {
   line-height: 50px;
   font-size: 24px;
-  text-align: center; }
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 .button-group {
   display: flex; }
@@ -371,7 +379,17 @@ header {
     .button-group .button svg {
       height: 100px;
       width: 54px; }
-    .button-group .button:hover polygon,
-    .button-group .button:hover path, .button-group .button:active polygon,
+    .button-group .button polygon,
+    .button-group .button path {
+      fill: #ff0f4d; }
+    .button-group .button:active polygon,
     .button-group .button:active path {
       fill: #b40d37; }
+
+.message-container {
+  padding: 20px;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }

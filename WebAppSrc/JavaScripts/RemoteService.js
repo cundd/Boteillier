@@ -3,15 +3,27 @@
  */
 
 export default class RemoteService {
-    static send(key) {
+    /**
+     *
+     * @param {string} key
+     * @param {function} [onSuccess]
+     * @param {function} [onError]
+     */
+    static send(key, onSuccess, onError) {
         RemoteService._request(
             '/api/' + key + '',
             'GET',
             (data) => {
                 console.log(data);
+                if (onSuccess) {
+                    onSuccess(data, request);
+                }
             },
             (request) => {
-                console.log(request)
+                console.log(request);
+                if (onSuccess) {
+                    onError(request);
+                }
             }
         )
     }
@@ -45,6 +57,8 @@ export default class RemoteService {
         };
 
         request.onerror = function () {
+            console.log('onerror', arguments);
+
             error(request);
         };
 
