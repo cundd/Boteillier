@@ -32,10 +32,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    var infoText: String {
+        get {
+            return "Waiting to serve you on http://\(self.address):\(self.port)/"
+        }
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         self.commandOutlet.stringValue = ""
         
-        let server = ServerBootstrap.create(withDocumentRoot:Bundle.main.resourcePath! + "/WebApp/dist", onPort: self.port) {
+        print(self.infoText)
+        
+        let server = ServerBootstrap.create(withDocumentRoot:Bundle.main.resourcePath! + "/WebAppDist", onPort: self.port) {
             key, sent in
             print("Received \(key)")
             DispatchQueue.main.async {
@@ -49,7 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func prepareInfoText() {
-        infoTextOutlet.stringValue = "Waiting to serve you on http://\(self.address):\(self.port)/"
+        infoTextOutlet.stringValue = self.infoText
     }
     
     func receivedCommand(_ key: String, _ sent: Bool) {

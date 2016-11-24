@@ -15,7 +15,21 @@
 		655703C01DE07B730089E887 /* ServerBootstrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_740 /* ServerBootstrap.swift */; };
 		655703C11DE07B790089E887 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_736 /* KeyCode.swift */; };
 		655703C21DE07B7B0089E887 /* KeySender.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_737 /* KeySender.swift */; };
-		655703C71DE07CD60089E887 /* WebApp in CopyFiles */ = {isa = PBXBuildFile; fileRef = OBJ_747 /* WebApp */; };
+		655703C81DE08ADF0089E887 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_749 /* PerfectLib.framework */; };
+		655703C91DE08ADF0089E887 /* PerfectLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_749 /* PerfectLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703CC1DE08ADF0089E887 /* COpenSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_750 /* COpenSSL.framework */; };
+		655703CD1DE08ADF0089E887 /* COpenSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_750 /* COpenSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703D01DE08ADF0089E887 /* PerfectThread.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_751 /* PerfectThread.framework */; };
+		655703D11DE08ADF0089E887 /* PerfectThread.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_751 /* PerfectThread.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703D41DE08ADF0089E887 /* PerfectNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_752 /* PerfectNet.framework */; };
+		655703D51DE08ADF0089E887 /* PerfectNet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_752 /* PerfectNet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703D81DE08ADF0089E887 /* PerfectHTTP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_753 /* PerfectHTTP.framework */; };
+		655703D91DE08ADF0089E887 /* PerfectHTTP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_753 /* PerfectHTTP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703DC1DE08ADF0089E887 /* CHTTPParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_754 /* CHTTPParser.framework */; };
+		655703DD1DE08ADF0089E887 /* CHTTPParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_754 /* CHTTPParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703E01DE08ADF0089E887 /* PerfectHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_755 /* PerfectHTTPServer.framework */; };
+		655703E11DE08ADF0089E887 /* PerfectHTTPServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_755 /* PerfectHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		655703E91DE090580089E887 /* WebAppDist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 655703E71DE090430089E887 /* WebAppDist */; };
 		OBJ_1000 /* e_capi_err.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_241 /* e_capi_err.c */; };
 		OBJ_1001 /* e_cast.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_242 /* e_cast.c */; };
 		OBJ_1002 /* e_chil.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_243 /* e_chil.c */; };
@@ -769,6 +783,55 @@
 			remoteGlobalIDString = 655703A31DE07AC70089E887;
 			remoteInfo = BoteillierUI;
 		};
+		655703CA1DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_757;
+			remoteInfo = PerfectLib;
+		};
+		655703CE1DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_773;
+			remoteInfo = COpenSSL;
+		};
+		655703D21DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1462;
+			remoteInfo = PerfectThread;
+		};
+		655703D61DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1470;
+			remoteInfo = PerfectNet;
+		};
+		655703DA1DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1485;
+			remoteInfo = PerfectHTTP;
+		};
+		655703DE1DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1508;
+			remoteInfo = CHTTPParser;
+		};
+		655703E21DE08ADF0089E887 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_1526;
+			remoteInfo = PerfectHTTPServer;
+		};
 		65FDF7071DDCE59C000D5D0A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
@@ -946,8 +1009,25 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				655703C71DE07CD60089E887 /* WebApp in CopyFiles */,
+				655703E91DE090580089E887 /* WebAppDist in CopyFiles */,
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		655703E41DE08AE00089E887 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				655703D51DE08ADF0089E887 /* PerfectNet.framework in Embed Frameworks */,
+				655703DD1DE08ADF0089E887 /* CHTTPParser.framework in Embed Frameworks */,
+				655703D11DE08ADF0089E887 /* PerfectThread.framework in Embed Frameworks */,
+				655703C91DE08ADF0089E887 /* PerfectLib.framework in Embed Frameworks */,
+				655703E11DE08ADF0089E887 /* PerfectHTTPServer.framework in Embed Frameworks */,
+				655703D91DE08ADF0089E887 /* PerfectHTTP.framework in Embed Frameworks */,
+				655703CD1DE08ADF0089E887 /* COpenSSL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -962,6 +1042,7 @@
 		655703B21DE07AC70089E887 /* BoteillierUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoteillierUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		655703B61DE07AC80089E887 /* BoteillierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoteillierUITests.swift; sourceTree = "<group>"; };
 		655703B81DE07AC80089E887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		655703E71DE090430089E887 /* WebAppDist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebAppDist; sourceTree = "<group>"; };
 		65FDF71F1DDCE76A000D5D0A /* Boteillier-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Boteillier-Bridging-Header.h"; sourceTree = "<group>"; };
 		OBJ_10 /* Dir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dir.swift; sourceTree = "<group>"; };
 		OBJ_100 /* bn_mul.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_mul.c; sourceTree = "<group>"; };
@@ -1665,7 +1746,6 @@
 		OBJ_744 /* BoteillierUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BoteillierUITests; sourceTree = SOURCE_ROOT; };
 		OBJ_745 /* BoteillierUIUITests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BoteillierUIUITests; sourceTree = SOURCE_ROOT; };
 		OBJ_746 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = SOURCE_ROOT; };
-		OBJ_747 /* WebApp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebApp; sourceTree = SOURCE_ROOT; };
 		OBJ_749 /* PerfectLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PerfectLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_75 /* bio_enc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_enc.c; sourceTree = "<group>"; };
 		OBJ_750 /* COpenSSL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = COpenSSL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1707,6 +1787,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655703D41DE08ADF0089E887 /* PerfectNet.framework in Frameworks */,
+				655703DC1DE08ADF0089E887 /* CHTTPParser.framework in Frameworks */,
+				655703D01DE08ADF0089E887 /* PerfectThread.framework in Frameworks */,
+				655703C81DE08ADF0089E887 /* PerfectLib.framework in Frameworks */,
+				655703E01DE08ADF0089E887 /* PerfectHTTPServer.framework in Frameworks */,
+				655703D81DE08ADF0089E887 /* PerfectHTTP.framework in Frameworks */,
+				655703CC1DE08ADF0089E887 /* COpenSSL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2520,8 +2607,8 @@
 				OBJ_742 /* BoteillierUI */,
 				OBJ_744 /* BoteillierUITests */,
 				OBJ_745 /* BoteillierUIUITests */,
+				655703E71DE090430089E887 /* WebAppDist */,
 				OBJ_746 /* Resources */,
-				OBJ_747 /* WebApp */,
 				655703A51DE07AC70089E887 /* BoteillierUI */,
 				655703B51DE07AC70089E887 /* BoteillierUITests */,
 				OBJ_748 /* Products */,
@@ -2692,10 +2779,18 @@
 				655703A11DE07AC70089E887 /* Frameworks */,
 				655703A21DE07AC70089E887 /* Resources */,
 				655703C61DE07CC80089E887 /* CopyFiles */,
+				655703E41DE08AE00089E887 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				655703CB1DE08ADF0089E887 /* PBXTargetDependency */,
+				655703CF1DE08ADF0089E887 /* PBXTargetDependency */,
+				655703D31DE08ADF0089E887 /* PBXTargetDependency */,
+				655703D71DE08ADF0089E887 /* PBXTargetDependency */,
+				655703DB1DE08ADF0089E887 /* PBXTargetDependency */,
+				655703DF1DE08ADF0089E887 /* PBXTargetDependency */,
+				655703E31DE08ADF0089E887 /* PBXTargetDependency */,
 			);
 			name = BoteillierUI;
 			productName = BoteillierUI;
@@ -3768,6 +3863,41 @@
 			target = 655703A31DE07AC70089E887 /* BoteillierUI */;
 			targetProxy = 655703B31DE07AC70089E887 /* PBXContainerItemProxy */;
 		};
+		655703CB1DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_757 /* PerfectLib */;
+			targetProxy = 655703CA1DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703CF1DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_773 /* COpenSSL */;
+			targetProxy = 655703CE1DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703D31DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_1462 /* PerfectThread */;
+			targetProxy = 655703D21DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703D71DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_1470 /* PerfectNet */;
+			targetProxy = 655703D61DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703DB1DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_1485 /* PerfectHTTP */;
+			targetProxy = 655703DA1DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703DF1DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_1508 /* CHTTPParser */;
+			targetProxy = 655703DE1DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
+		655703E31DE08ADF0089E887 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_1526 /* PerfectHTTPServer */;
+			targetProxy = 655703E21DE08ADF0089E887 /* PBXContainerItemProxy */;
+		};
 		OBJ_1483 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = OBJ_773 /* COpenSSL */;
@@ -3905,6 +4035,7 @@
 		655703BA1DE07AC80089E887 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3947,7 +4078,6 @@
 				);
 				INFOPLIST_FILE = BoteillierUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = cundd.net.BoteillierUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3961,6 +4091,7 @@
 		655703BB1DE07AC80089E887 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -3999,7 +4130,6 @@
 				);
 				INFOPLIST_FILE = BoteillierUI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = cundd.net.BoteillierUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4115,6 +4245,7 @@
 		OBJ_1464 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "";
@@ -4135,6 +4266,7 @@
 		OBJ_1465 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "";
@@ -4155,6 +4287,7 @@
 		OBJ_1472 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "Packages/COpenSSL-2.0.1/COpenSSL/include";
@@ -4176,6 +4309,7 @@
 		OBJ_1473 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "Packages/COpenSSL-2.0.1/COpenSSL/include";
@@ -4197,6 +4331,7 @@
 		OBJ_1487 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "Packages/COpenSSL-2.0.1/COpenSSL/include";
@@ -4218,6 +4353,7 @@
 		OBJ_1488 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "Packages/COpenSSL-2.0.1/COpenSSL/include";
@@ -4239,6 +4375,7 @@
 		OBJ_1510 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -4265,6 +4402,7 @@
 		OBJ_1511 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -4291,6 +4429,7 @@
 		OBJ_1528 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
@@ -4315,6 +4454,7 @@
 		OBJ_1529 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = (
@@ -4424,6 +4564,7 @@
 		OBJ_759 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "";
@@ -4444,6 +4585,7 @@
 		OBJ_760 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
 				HEADER_SEARCH_PATHS = "";
@@ -4464,6 +4606,7 @@
 		OBJ_775 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
@@ -4486,6 +4629,7 @@
 		OBJ_776 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				DEFINES_MODULE = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(PLATFORM_DIR)/Developer/Library/Frameworks";
