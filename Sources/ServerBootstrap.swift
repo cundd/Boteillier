@@ -152,50 +152,94 @@ struct ServerBootstrap {
         }
     }
     
+    private static func getFirstAddress() -> String {
+        let addresses = NetworkService.getIpAddresses()
+        
+        return addresses.first!
+        
+    }
+    
     private static func configureRoutes(_ server: HTTPServer, receivedCommandCallback: @escaping ReceivedCommandCallback) {
         // Register your own routes and handlers
         var routes = Routes()
-        routes.add(
-            method: .get,
-            uri: "/",
-            handler: {
-                request, response in
-                
-                response.status = .seeOther
-                response.setHeader(.location, value: "/index.html")
-                response.completed()
+        
+        // Index route:
+        routes.add(method: .options, uri: "/") {
+            request, response in
+            setCorsHeaders(response)
+            response.completed()
+        }
+        routes.add(method: .get, uri: "/") {
+            request, response in
+            setCorsHeaders(response)
+            response.status = .seeOther
+            response.setHeader(.location, value: "/index.html")
+            response.completed()
+        }
+        
+        // Retrieve service information:
+        routes.add(method: .options, uri: "/info") {
+            request, response in
+            setCorsHeaders(response)
+            response.completed()
+        }
+        routes.add(method: .get, uri: "/info") {
+            request, response in
+            
+            let data: [String:Any] = [
+                "hostName": Host.current().localizedName ?? "",
+                "ip": self.getFirstAddress()
+            ]
+            
+            response.addHeader(HTTPResponseHeader.Name.accessControlAllowOrigin, value: "*")
+            do {
+                try response.setBody(json: data)
+            } catch {
+                print("Error: Could not set JSON response body: \(error)")
             }
-        )
-        routes.add(
-            method: .get,
-            uri: "/api/{key}",
-            handler: {
-                request, response in
-                let key = request.urlVariables["key"]!
-                
-                response.setHeader(.contentType, value: "application/json")
-                let sent = KeySender.send(key: key)
-                if !sent {
-                    print("Error: Could not send key")
-                }
-                
-                let data: [String:Any] = [
-                    "key": key,
-                    "sent": sent
-                ]
-                
-                receivedCommandCallback(key, sent)
-                do {
-                    try response.setBody(json: data)
-                } catch {
-                    print("Error: Could not set JSON response body: \(error)")
-                }
-                
-                response.completed()
+            
+            response.completed()
+        }
+        
+        // Receive keys:
+        routes.add(method: .get, uri: "/api/{key}") {
+            request, response in
+            setCorsHeaders(response)
+            response.completed()
+        }
+        routes.add(method: .get, uri: "/api/{key}") {
+            request, response in
+            let key = request.urlVariables["key"]!
+            
+            setCorsHeaders(response)
+            response.setHeader(.contentType, value: "application/json")
+            let sent = KeySender.send(key: key)
+            if !sent {
+                print("Error: Could not send key")
             }
-        )
+            
+            let data: [String:Any] = [
+                "key": key,
+                "sent": sent
+            ]
+            
+            receivedCommandCallback(key, sent)
+            do {
+                try response.setBody(json: data)
+            } catch {
+                print("Error: Could not set JSON response body: \(error)")
+            }
+            
+            response.completed()
+        }
         
         // Add the routes to the server.
         server.addRoutes(routes)
+    }
+    
+    private static func setCorsHeaders(_ response: HTTPResponse, allowedMethods: String = "GET") {
+        response.addHeader(HTTPResponseHeader.Name.allow, value: allowedMethods)
+        response.addHeader(HTTPResponseHeader.Name.accessControlAllowOrigin, value: "*")
+        response.addHeader(HTTPResponseHeader.Name.custom(name: "Access-Control-Allow-Headers"), value: "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
     }
 }
