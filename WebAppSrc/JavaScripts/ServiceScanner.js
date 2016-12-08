@@ -6,18 +6,50 @@ const EF = () => {
 };
 
 export default class ServiceScanner {
-    findServices(serviceAvailable) {
+    constructor() {
+        /**
+         * @type {Store}
+         */
+        this.store = {};
+    }
+
+    static needs() {
+        return ['store'];
+    }
+
+    /**
+     * Scan the network for services
+     *
+     * @param {function} serviceAvailable
+     */
+    findServices(serviceAvailable = null) {
         const location = window && window.location;
         const hostname = location.hostname;
+
+        const store = this.store;
+
+        const serviceAvailableCallback = (url, data, request) => {
+            store.addService(url, data);
+
+            if (typeof serviceAvailable === 'function') {
+                serviceAvailable(url, data, request);
+            }
+        };
 
         if (/^[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}$/.test(hostname)) {
             let ipParts = hostname.split('.');
 
-            const lastIpPart = ipParts.pop();
-
-            // this._testIps(serviceAvailable, ipParts, ServiceScanner._range(20, 30), location.port, location.protocol);
-            this._testIps(serviceAvailable, ipParts, [lastIpPart], location.port, location.protocol);
-            // this._testIps(serviceAvailable, ipParts, ServiceScanner._range(1, 255), location.port, location.protocol);
+            const testing = false;
+            if (testing ) {
+                // For testing
+                const lastIpPart = ipParts.pop();
+                this._testIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
+            } else {
+                ipParts.pop();
+                this._testIps(serviceAvailableCallback, ipParts, ServiceScanner._range(1, 255), location.port, location.protocol);
+            }
+        } else {
+            throw new ReferenceError('Could not determine IP range for hostname "' + hostname + '"');
         }
     }
 
@@ -26,7 +58,7 @@ export default class ServiceScanner {
             const ipElements = ipParts.slice();
             ipElements.push(ip);
 
-            this._testIp(serviceAvailable, ipElements, port, scheme);
+            // this._testIp(serviceAvailable, ipElements, port, scheme);
             this._testIp(serviceAvailable, ipElements, '8181', scheme);
         }.bind(this));
     }
@@ -45,7 +77,7 @@ export default class ServiceScanner {
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
                 try {
-                    var data = JSON.parse(request.responseText);
+                    const data = JSON.parse(request.responseText);
                     success(url, data, request);
                 } catch (exception) {
                     error(request, {
@@ -68,7 +100,6 @@ export default class ServiceScanner {
             error(request);
         }, 4000);
     }
-
 
     static _range(start, stop, step) {
         if (typeof stop == 'undefined') {

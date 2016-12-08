@@ -6,6 +6,8 @@ import RemoteService from './RemoteService';
 
 export default class Controller {
     constructor() {
+        /** @type {Store} */
+        this.store = {};
         this.controls = _.map(document.querySelectorAll('[data-action]'));
 
         this.keyMap = {
@@ -13,6 +15,10 @@ export default class Controller {
             "forward": "right",
             "back": "left"
         };
+    }
+
+    static needs() {
+        return ['store'];
     }
 
     addEventListeners() {
@@ -27,10 +33,11 @@ export default class Controller {
 
     click(event, element) {
         const action = element.dataset.action;
-        RemoteService.send(this.keyMap[action], () => console.log(arguments), function (request) {
-            const messageOutlet = document.querySelector('[data-outlet="message"]');
+        const messageOutlet = document.querySelector('[data-outlet="message"]');
+
+        RemoteService.send(this.store.getActiveService(), this.keyMap[action], () => {}, function (request) {
             if (messageOutlet) {
-                messageOutlet.innerText = 'ERROR: ' + request.statusText;
+                messageOutlet.innerText = 'Error: ' + request.statusText;
             }
         });
     }

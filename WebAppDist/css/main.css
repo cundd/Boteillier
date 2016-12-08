@@ -363,11 +363,18 @@ body {
 header {
   line-height: 50px;
   font-size: 24px;
+  font-weight: bold;
   text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+h1 {
+  font-size: 21px; }
+
+.button-group-outer {
+  display: none; }
 
 .button-group {
   display: flex; }
@@ -393,3 +400,21 @@ header {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.service-list-container {
+  padding: 10px 20px;
+  background: #240b0e; }
+  .service-list-container ul {
+    list-style: none;
+    padding: 0; }
+  .service-list-container .service {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: block;
+    padding: 5px;
+    cursor: pointer; }
+    .service-list-container .service:hover {
+      color: #240b0e;
+      background: #ff0f4d; }

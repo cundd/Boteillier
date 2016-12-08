@@ -1,5 +1,5 @@
 module.exports = {
-    entry: "./JavaScripts/main.js",
+    entry: "./JavaScripts/main.jsx",
     output: {
         path: __dirname + "/../WebAppDist/js",
         filename: "main.js"
@@ -11,11 +11,11 @@ module.exports = {
                 loader: "style!css"
             },
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader', // 'babel-loader' is also a valid name to reference
                 query: {
-                    presets: ['es2015']
+                    presets: ['es2015', 'react']
                 }
             }
         ]

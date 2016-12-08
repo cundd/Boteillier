@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a342590-eb31-43c0-b172-5bdaaaefd0cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js" />
+    <list default="true" id="9a342590-eb31-43c0-b172-5bdaaaefd0cf" name="Default" comment="Service discovery&#10;&#10;Display a list of available services&#10;Chose a service before sending messages&#10;Added React components&#10;&#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/Model/Service.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/Store.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/View/Service.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/View/ServiceList.jsx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.jsx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Boteillier.xcodeproj/project.xcworkspace/xcuserdata/daniel.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Boteillier.xcodeproj/project.xcworkspace/xcuserdata/daniel.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Boteillier.iml" afterPath="$PROJECT_DIR$/.idea/Boteillier.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Sources/ServerBootstrap.swift" afterPath="$PROJECT_DIR$/Sources/ServerBootstrap.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppDist/css/main.css" afterPath="$PROJECT_DIR$/WebAppDist/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppDist/css/main.css.map" afterPath="$PROJECT_DIR$/WebAppDist/css/main.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppDist/index.html" afterPath="$PROJECT_DIR$/WebAppDist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppDist/js/main.js" afterPath="$PROJECT_DIR$/WebAppDist/js/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppDist/js/main.js.map" afterPath="$PROJECT_DIR$/WebAppDist/js/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js" afterPath="$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss" afterPath="$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss" afterPath="$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/package.json" afterPath="$PROJECT_DIR$/WebAppSrc/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebAppSrc/webpack.config.js" afterPath="$PROJECT_DIR$/WebAppSrc/webpack.config.js" />
     </list>
     <ignored path="Boteillier.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,34 +52,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
+            <state relative-caret-position="194">
+              <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,18 +65,30 @@
       <file leaf-file-name="RemoteService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="64" column="23" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="64" selection-end-column="23" />
+            <state relative-caret-position="209">
+              <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServiceScanner.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/main.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#43#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServiceScanner.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+            <state relative-caret-position="194">
+              <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -94,32 +96,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/WebAppSrc/package.json">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="377">
+              <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Boteillier-Bridging-Header.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sources/Boteillier-Bridging-Header.h">
+      <file leaf-file-name="ServiceList.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/View/ServiceList.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="399">
+              <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KeyCode.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Sources/KeyCode.swift">
+      <file leaf-file-name="Store.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Store.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1695">
-              <caret line="113" column="29" lean-forward="false" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="-243">
+              <caret line="82" column="4" lean-forward="false" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+              <folding>
+                <element signature="e#42#97#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,11 +133,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAppDist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+            <state relative-caret-position="157">
+              <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
               <folding>
-                <marker date="1480020836000" expanded="true" signature="804:957" ph="..." />
-                <marker date="1480020836000" expanded="true" signature="897:925" ph="..." />
+                <marker date="1481218811000" expanded="true" signature="804:957" ph="..." />
+                <marker date="1481218811000" expanded="true" signature="897:925" ph="..." />
               </folding>
             </state>
           </provider>
@@ -140,8 +146,8 @@
       <file leaf-file-name="_variables.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+            <state relative-caret-position="38">
+              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -155,6 +161,11 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>dicri</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -178,14 +189,21 @@
         <option value="$PROJECT_DIR$/WebApp/src/Stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/WebApp/src/webpack.config.js" />
         <option value="$PROJECT_DIR$/WebAppSrc/package.json" />
-        <option value="$PROJECT_DIR$/WebAppSrc/webpack.config.js" />
-        <option value="$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss" />
-        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js" />
-        <option value="$PROJECT_DIR$/WebAppDist/index.html" />
-        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js" />
-        <option value="$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss" />
         <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js" />
         <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/webpack.config.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/main.jsx" />
+        <option value="$PROJECT_DIR$/WebAppSrc/node_modules/react/dist/react.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/Model/Service.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/App.jsx" />
+        <option value="$PROJECT_DIR$/WebAppDist/index.html" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/View/ServiceList.jsx" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/View/Service.jsx" />
+        <option value="$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss" />
+        <option value="$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/Store.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js" />
+        <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js" />
         <option value="$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js" />
       </list>
     </option>
@@ -314,6 +332,50 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="WebAppSrc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaScripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="View" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Boteillier" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Boteillier" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WebAppSrc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JavaScripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Boteillier" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Boteillier" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="WebAppDist" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -406,18 +468,37 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/WebAppSrc/JavaScripts/View" />
+      <recent name="$PROJECT_DIR$/WebApp/src/Stylesheets" />
+      <recent name="$PROJECT_DIR$/WebApp/src/scss" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/WebApp" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WebApp/src/Stylesheets" />
-      <recent name="$PROJECT_DIR$/WebApp/src/scss" />
-    </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -433,6 +514,10 @@
       <method />
     </configuration>
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -485,7 +570,7 @@
       <workItem from="1480153904287" duration="18000" />
       <workItem from="1480153932260" duration="1278000" />
       <workItem from="1480533322647" duration="636000" />
-      <workItem from="1481050381582" duration="4847000" />
+      <workItem from="1481050381582" duration="13526000" />
     </task>
     <task id="LOCAL-00001" summary="Changed the structure of the WebApp&#10;&#10;Move the WebApp's dist and src folders in separate directories">
       <created>1479563594076</created>
@@ -515,11 +600,18 @@
       <option name="project" value="LOCAL" />
       <updated>1480021254827</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Prepared a scanner for available services">
+      <created>1481196773880</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1481196773880</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20015000" />
+    <option name="totallyTimeSpent" value="28694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -534,24 +626,25 @@
     <frame x="0" y="23" width="1388" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2384844" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -573,50 +666,16 @@
     <MESSAGE value="Removed unused files and debugging output" />
     <MESSAGE value="Dark theme for the app" />
     <MESSAGE value="Print the web app URL in command line mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print the web app URL in command line mode" />
+    <MESSAGE value="Prepared a scanner for available services" />
+    <MESSAGE value="Added React components" />
+    <MESSAGE value="Service discovery&#10;&#10;Display a list of available services&#10;Chose a service before sending messages&#10;Added React components&#10;&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Service discovery&#10;&#10;Display a list of available services&#10;Chose a service before sending messages&#10;Added React components&#10;&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Slice 1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApp/src/JavaScripts/main.js" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApp/src/webpack.config.js" />
-    <entry file="file://$PROJECT_DIR$/WebApp/src/JavaScripts/App.js" />
-    <entry file="file://$PROJECT_DIR$/WebApp/src/JavaScripts/Controller.js" />
-    <entry file="file://$PROJECT_DIR$/WebApp/src/JavaScripts/RemoteService.js" />
-    <entry file="file://$PROJECT_DIR$/WebApp/src/Stylesheets/main.scss" />
-    <entry file="file://$PROJECT_DIR$/WebApp/dist/index.html" />
-    <entry file="file://$USER_HOME$/Downloads/Slice 1.svg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" lean-forward="false" selection-start-line="7" selection-start-column="7" selection-end-line="8" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebApp/src/node_modules/irlib/src/components/dictionary.js" />
     <entry file="file://$PROJECT_DIR$/WebApp/dist/browserconfig.xml" />
     <entry file="file://$USER_HOME$/Downloads/initializr/index.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -682,13 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="2" lean-forward="false" selection-start-line="22" selection-start-column="2" selection-end-line="22" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebAppDist/js/vendor/npm.js" />
     <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/_normalize.scss">
       <provider selected="true" editor-type-id="text-editor">
@@ -701,14 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="149" column="24" lean-forward="false" selection-start-line="149" selection-start-column="24" selection-end-line="149" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="1" lean-forward="false" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -737,74 +781,200 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppDist/index.html">
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+        <state relative-caret-position="-8">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <marker date="1480020836000" expanded="true" signature="804:957" ph="..." />
-            <marker date="1480020836000" expanded="true" signature="897:925" ph="..." />
+            <marker date="1481196918000" expanded="true" signature="0:740" ph="{&quot;name&quot;: &quot;boteillier&quot;...}" />
+            <marker date="1481196918000" expanded="true" signature="444:523" ph="{&quot;irlib&quot;: &quot;^0.1.4&quot;...}" />
+            <marker date="1481196918000" expanded="true" signature="546:738" ph="{&quot;babel-core&quot;: &quot;^6.17.0&quot;...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss">
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript6.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
+        <state relative-caret-position="114">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/node_modules/webpack/lib/MultiCompiler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/node_modules/react/lib/ReactIsomorphic.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="47" column="2" lean-forward="false" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/node_modules/react/dist/react.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24589">
+          <caret line="2427" column="2" lean-forward="false" selection-start-line="2427" selection-start-column="2" selection-end-line="2427" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/node_modules/irlib/dist/irlib.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1193">
+          <caret line="811" column="9" lean-forward="false" selection-start-line="811" selection-start-column="9" selection-end-line="811" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js">
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Model/Service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="64" column="23" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="64" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+        <state relative-caret-position="133">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebAppSrc/package.json">
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="166">
+          <caret line="69" column="9" lean-forward="false" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/node_modules/babel-core/lib/store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="22" column="4" lean-forward="false" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="29" column="76" lean-forward="false" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/View/Service.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/_variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/Stylesheets/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="87" column="33" lean-forward="false" selection-start-line="87" selection-start-column="33" selection-end-line="87" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/View/ServiceList.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="21" column="24" lean-forward="false" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/main.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#43#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/RemoteService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="21" column="9" lean-forward="true" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppDist/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="33" column="10" lean-forward="false" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppDist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="48" column="12" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
+          <folding>
+            <marker date="1481218811000" expanded="true" signature="804:957" ph="..." />
+            <marker date="1481218811000" expanded="true" signature="897:925" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-243">
+          <caret line="82" column="4" lean-forward="false" selection-start-line="82" selection-start-column="4" selection-end-line="82" selection-end-column="4" />
+          <folding>
+            <element signature="e#42#97#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebAppSrc/JavaScripts/ServiceScanner.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="31" column="31" lean-forward="false" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

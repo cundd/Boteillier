@@ -186,10 +186,8 @@ struct ServerBootstrap {
         routes.add(method: .get, uri: "/info") {
             request, response in
             
-            let data: [String:Any] = [
-                "hostName": Host.current().localizedName ?? "",
-                "ip": self.getFirstAddress()
-            ]
+            
+            let data = self.buildServiceInfo(server:server)
             
             response.addHeader(HTTPResponseHeader.Name.accessControlAllowOrigin, value: "*")
             do {
@@ -202,7 +200,7 @@ struct ServerBootstrap {
         }
         
         // Receive keys:
-        routes.add(method: .get, uri: "/api/{key}") {
+        routes.add(method: .options, uri: "/api/{key}") {
             request, response in
             setCorsHeaders(response)
             response.completed()
@@ -235,6 +233,18 @@ struct ServerBootstrap {
         
         // Add the routes to the server.
         server.addRoutes(routes)
+    }
+    
+    private static func buildServiceInfo(server: HTTPServer) -> [String:Any]  {
+        let mainIpAddress = self.getFirstAddress()
+        let schema = (server.ssl != nil ? "https" : "http")
+        let url = "\(schema)://\(mainIpAddress):\(server.serverPort)"
+        
+        return [
+            "hostName": Host.current().localizedName ?? "",
+            "ip": self.getFirstAddress(),
+            "url": url,
+        ]
     }
     
     private static func setCorsHeaders(_ response: HTTPResponse, allowedMethods: String = "GET") {

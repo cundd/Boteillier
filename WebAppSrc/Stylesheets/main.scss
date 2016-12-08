@@ -1,6 +1,13 @@
 @import "normalize";
 @import "variables";
 
+@mixin no-select() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 body {
     background: black;
     color: $color;
@@ -9,12 +16,22 @@ body {
 header {
     line-height: 50px;
     font-size: 24px;
+    font-weight: bold;
     text-align: center;
 
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+h1 {
+    font-size: 21px;
+    //text-transform: uppercase;
+}
+
+.button-group-outer {
+    display: none; // Will be change by JavaScript
 }
 
 .button-group {
@@ -49,8 +66,27 @@ header {
     padding: 20px;
     text-align: center;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    @include no-select;
+}
+
+.service-list-container {
+    padding: 10px 20px;
+    background: $color-darker;
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .service {
+        @include no-select;
+        display: block;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-darker;
+            background: $color;
+        }
+    }
 }

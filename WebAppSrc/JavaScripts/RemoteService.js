@@ -1,34 +1,29 @@
 /**
  * Created by daniel on 22.10.16.
  */
+const EF = () => {
+};
 
 export default class RemoteService {
     /**
+     * Sends the key stroke
      *
+     * @param {Service} service
      * @param {string} key
      * @param {function} [onSuccess]
      * @param {function} [onError]
      */
-    static send(key, onSuccess, onError) {
+    static send(service, key, onSuccess = EF, onError = EF) {
         RemoteService._request(
-            '/api/' + key + '',
+            service.url + '/api/' + key + '',
             'GET',
-            (data) => {
-                console.log(data);
-                if (onSuccess) {
-                    onSuccess(data, request);
-                }
-            },
-            (request) => {
-                console.log(request);
-                if (onSuccess) {
-                    onError(request);
-                }
-            }
+            onSuccess,
+            onError
         )
     }
 
     /**
+     * Make an AJAX request
      *
      * @param {string} url
      * @param {string} method
@@ -41,24 +36,24 @@ export default class RemoteService {
         request.open(method, url, true);
         request.setRequestHeader('Content-Type', 'application/javascript');
 
-        request.onload = function () {
+        request.onload = () => {
             if (request.status >= 200 && request.status < 400) {
+                let data;
                 try {
-                    var data = JSON.parse(request.responseText);
-                    success(data, request);
+                    data = JSON.parse(request.responseText);
                 } catch (exception) {
                     error(request, {
                         "exception": exception
                     });
+                    return;
                 }
+                success(data, request);
             } else {
                 error(request);
             }
         };
 
-        request.onerror = function () {
-            console.log('onerror', arguments);
-
+        request.onerror = () => {
             error(request);
         };
 
