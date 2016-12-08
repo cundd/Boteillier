@@ -8,11 +8,14 @@ export default class App {
     }
 
     static needs() {
-        return ['controller'];
+        return ['controller', 'serviceScanner'];
     }
 
     run() {
-        this.controller.addEventListeners()
+        this.controller.addEventListeners();
+        this.serviceScanner.findServices((serviceUrl) => {
+            console.log(serviceUrl)
+        });
     }
 }
 
