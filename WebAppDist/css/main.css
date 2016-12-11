@@ -418,3 +418,6 @@ h1 {
     .service-list-container .service:hover {
       color: #240b0e;
       background: #ff0f4d; }
+  .service-list-container li.active .service {
+    color: #240b0e;
+    background: #ff0f4d; }

@@ -25591,7 +25591,10 @@
 	
 	        var _this = _possibleConstructorReturn(this, (ServiceList.__proto__ || Object.getPrototypeOf(ServiceList)).call(this));
 	
-	        _this.state = { services: [] };
+	        _this.state = {
+	            services: [],
+	            activeService: {}
+	        };
 	        return _this;
 	    }
 	
@@ -25599,6 +25602,7 @@
 	        key: 'render',
 	        value: function render() {
 	            var services = this.state.services;
+	            var activeService = this.state.activeService;
 	            if (!services || services.length === 0) {
 	                return _react2.default.createElement('div', { className: 'service-list' });
 	            }
@@ -25606,12 +25610,18 @@
 	            var onServiceClick = this.props.onServiceClick;
 	
 	            var servicesElements = services.map(function (service, url) {
+	                var classNames = '';
+	                if (service.hostName === activeService.hostName) {
+	                    classNames = 'active';
+	                }
+	
 	                return _react2.default.createElement(
 	                    'li',
-	                    { key: url },
+	                    { key: url, className: classNames },
 	                    _react2.default.createElement(_Service2.default, { service: service, onClick: onServiceClick })
 	                );
 	            });
+	
 	            return _react2.default.createElement(
 	                'div',
 	                { className: 'service-list-container' },

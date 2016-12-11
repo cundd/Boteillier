@@ -89,4 +89,9 @@ h1 {
             background: $color;
         }
     }
+
+    li.active .service {
+        color: $color-darker;
+        background: $color;
+    }
 }
