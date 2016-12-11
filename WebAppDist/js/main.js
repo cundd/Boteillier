@@ -65,7 +65,7 @@
 	
 	var _Store2 = _interopRequireDefault(_Store);
 	
-	var _ServiceScanner = __webpack_require__(/*! ./ServiceScanner.js */ 186);
+	var _ServiceScanner = __webpack_require__(/*! ./ServiceScanner.js */ 187);
 	
 	var _ServiceScanner2 = _interopRequireDefault(_ServiceScanner);
 	
@@ -81,7 +81,7 @@
 	sl.register('store', _Store2.default);
 	
 	var app = sl.get('app');
-	app.run(document.querySelector('[data-outlet="react"'));
+	app.run(document.querySelector('[data-outlet="react"]'));
 
 /***/ },
 /* 1 */
@@ -27442,7 +27442,7 @@
 	
 	var _irlib2 = _interopRequireDefault(_irlib);
 	
-	var _Service = __webpack_require__(/*! ./Model/Service */ 187);
+	var _Service = __webpack_require__(/*! ./Model/Service */ 186);
 	
 	var _Service2 = _interopRequireDefault(_Service);
 	
@@ -27588,6 +27588,57 @@
 
 /***/ },
 /* 186 */
+/*!**************************************!*\
+  !*** ./JavaScripts/Model/Service.js ***!
+  \**************************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Created by daniel on 08.12.16.
+	 */
+	var Service = function () {
+	    function Service(url, hostName, ip) {
+	        _classCallCheck(this, Service);
+	
+	        this._url = url;
+	        this._hostName = hostName;
+	        this._ip = ip;
+	    }
+	
+	    _createClass(Service, [{
+	        key: "ip",
+	        get: function get() {
+	            return this._ip;
+	        }
+	    }, {
+	        key: "url",
+	        get: function get() {
+	            return this._url;
+	        }
+	    }, {
+	        key: "hostName",
+	        get: function get() {
+	            return this._hostName;
+	        }
+	    }]);
+	
+	    return Service;
+	}();
+	
+	exports.default = Service;
+
+/***/ },
+/* 187 */
 /*!***************************************!*\
   !*** ./JavaScripts/ServiceScanner.js ***!
   \***************************************/
@@ -27749,57 +27800,6 @@
 	}();
 	
 	exports.default = ServiceScanner;
-
-/***/ },
-/* 187 */
-/*!**************************************!*\
-  !*** ./JavaScripts/Model/Service.js ***!
-  \**************************************/
-/***/ function(module, exports) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Created by daniel on 08.12.16.
-	 */
-	var Service = function () {
-	    function Service(url, hostName, ip) {
-	        _classCallCheck(this, Service);
-	
-	        this._url = url;
-	        this._hostName = hostName;
-	        this._ip = ip;
-	    }
-	
-	    _createClass(Service, [{
-	        key: "ip",
-	        get: function get() {
-	            return this._ip;
-	        }
-	    }, {
-	        key: "url",
-	        get: function get() {
-	            return this._url;
-	        }
-	    }, {
-	        key: "hostName",
-	        get: function get() {
-	            return this._hostName;
-	        }
-	    }]);
-	
-	    return Service;
-	}();
-	
-	exports.default = Service;
 
 /***/ }
 /******/ ]);

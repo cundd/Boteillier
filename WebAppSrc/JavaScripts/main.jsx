@@ -15,4 +15,4 @@ sl.register('serviceScanner', ServiceScanner);
 sl.register('store', Store);
 
 const app = sl.get('app');
-app.run(document.querySelector('[data-outlet="react"'));
+app.run(document.querySelector('[data-outlet="react"]'));
