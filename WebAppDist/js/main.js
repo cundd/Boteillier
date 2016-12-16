@@ -27343,7 +27343,7 @@
 /*!**************************************!*\
   !*** ./JavaScripts/RemoteService.js ***!
   \**************************************/
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -27351,13 +27351,19 @@
 	    value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Created by daniel on 22.10.16.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+	
+	
+	var _Ajax = __webpack_require__(/*! ./Ajax */ 188);
+	
+	var _Ajax2 = _interopRequireDefault(_Ajax);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	/**
-	 * Created by daniel on 22.10.16.
-	 */
 	var EF = function EF() {};
 	
 	var RemoteService = function () {
@@ -27396,32 +27402,7 @@
 	    }, {
 	        key: '_request',
 	        value: function _request(url, method, success, error) {
-	            var request = new XMLHttpRequest();
-	            request.open(method, url, true);
-	            request.setRequestHeader('Content-Type', 'application/javascript');
-	
-	            request.onload = function () {
-	                if (request.status >= 200 && request.status < 400) {
-	                    var data = void 0;
-	                    try {
-	                        data = JSON.parse(request.responseText);
-	                    } catch (exception) {
-	                        error(request, {
-	                            "exception": exception
-	                        });
-	                        return;
-	                    }
-	                    success(data, request);
-	                } else {
-	                    error(request);
-	                }
-	            };
-	
-	            request.onerror = function () {
-	                error(request);
-	            };
-	
-	            request.send();
+	            _Ajax2.default.json(url, method).then(success).else(error);
 	        }
 	    }]);
 	
@@ -27652,7 +27633,7 @@
 /*!***************************************!*\
   !*** ./JavaScripts/ServiceScanner.js ***!
   \***************************************/
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -27660,13 +27641,18 @@
 	    value: true
 	});
 	
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * Created by daniel on 06.12.16.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+	
+	
+	var _Ajax = __webpack_require__(/*! ./Ajax */ 188);
+	
+	var _Ajax2 = _interopRequireDefault(_Ajax);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	/**
-	 * Created by daniel on 06.12.16.
-	 */
 	
 	var EF = function EF() {};
 	
@@ -27694,10 +27680,10 @@
 	
 	            var location = window && window.location;
 	            var hostname = location.hostname;
-	
 	            var store = this.store;
-	
-	            var serviceAvailableCallback = function serviceAvailableCallback(url, data, request) {
+	            var serviceAvailableCallback = function serviceAvailableCallback(request, info) {
+	                var url = info.url;
+	                var data = info.data;
 	                store.addService(url, data);
 	
 	                if (typeof serviceAvailable === 'function') {
@@ -27737,7 +27723,9 @@
 	        value: function _testIp(serviceAvailable, ipParts, port, scheme) {
 	            var url = scheme + '//' + ipParts.join('.') + ':' + port + '/info';
 	
-	            this._ajax('GET', url, serviceAvailable);
+	            this._ajax('GET', url, serviceAvailable, function () {
+	                // console.log(arguments)
+	            });
 	        }
 	    }, {
 	        key: '_ajax',
@@ -27745,35 +27733,7 @@
 	            var success = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : EF;
 	            var error = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : EF;
 	
-	            var request = new XMLHttpRequest();
-	            request.open(method, url, true);
-	            request.setRequestHeader('Content-Type', 'application/javascript');
-	
-	            request.onload = function () {
-	                if (request.status >= 200 && request.status < 400) {
-	                    try {
-	                        var data = JSON.parse(request.responseText);
-	                        success(url, data, request);
-	                    } catch (exception) {
-	                        error(request, {
-	                            "exception": exception
-	                        });
-	                    }
-	                } else {
-	                    error(request);
-	                }
-	            };
-	
-	            request.onerror = function () {
-	                error(request);
-	            };
-	
-	            request.send();
-	
-	            setTimeout(function () {
-	                request.abort();
-	                error(request);
-	            }, 4000);
+	            _Ajax2.default.json(url, method).then(success).else(error);
 	        }
 	    }], [{
 	        key: 'needs',
@@ -27810,6 +27770,135 @@
 	}();
 	
 	exports.default = ServiceScanner;
+
+/***/ },
+/* 188 */
+/*!*****************************!*\
+  !*** ./JavaScripts/Ajax.js ***!
+  \*****************************/
+/***/ function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	/**
+	 * Created by daniel on 16.12.16.
+	 */
+	var EF = function EF() {};
+	
+	var Promise = function () {
+	    function Promise(request, timeout) {
+	        var userData = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+	
+	        _classCallCheck(this, Promise);
+	
+	        var self = this;
+	        this._then = EF;
+	        this._else = EF;
+	
+	        request.onload = function () {
+	            var status = request.status;
+	            if (status >= 200 && status < 400) {
+	                try {
+	                    var data = JSON.parse(request.responseText);
+	                    var successData = Object.assign({}, userData, { "data": data });
+	                    self._then(request, successData);
+	                } catch (exception) {
+	                    self._else(request, {
+	                        "exception": exception
+	                    });
+	                }
+	            } else {
+	                self._else(request, {
+	                    "exception": new RangeError("Error status", status)
+	                });
+	            }
+	        };
+	
+	        request.onerror = function () {
+	            self._else(request);
+	        };
+	
+	        setTimeout(function () {
+	            request.abort();
+	            self._else(request, {
+	                "error": "timeout"
+	            });
+	        }, parseInt(timeout));
+	    }
+	
+	    _createClass(Promise, [{
+	        key: "else",
+	        value: function _else(elseCallback) {
+	            if (typeof elseCallback !== 'function') {
+	                throw new TypeError('Argument 1 must be a valid callback');
+	            }
+	            this._else = elseCallback;
+	
+	            return this;
+	        }
+	    }, {
+	        key: "then",
+	        value: function then(thenCallback) {
+	            if (typeof thenCallback !== 'function') {
+	                throw new TypeError('Argument 1 must be a valid callback');
+	            }
+	            this._then = thenCallback;
+	
+	            return this;
+	        }
+	    }]);
+	
+	    return Promise;
+	}();
+	
+	var Ajax = function () {
+	    function Ajax() {
+	        _classCallCheck(this, Ajax);
+	    }
+	
+	    _createClass(Ajax, null, [{
+	        key: "json",
+	        value: function json(url) {
+	            var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'GET';
+	            var timeout = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 4000;
+	
+	            var requestMethods = ['GET', 'POST', 'PUT', 'OPTIONS'];
+	            if (typeof url !== 'string') {
+	                throw new TypeError('Argument "url" must be of type string');
+	            }
+	            if (typeof method !== 'string') {
+	                throw new TypeError('Argument "method" must be of type string');
+	            }
+	            if (requestMethods.indexOf(method) === -1) {
+	                throw new TypeError('Argument "method" must be one of "' + requestMethods.join('", "') + '"');
+	            }
+	
+	            var request = new XMLHttpRequest();
+	            request.open(method, url, true);
+	            request.setRequestHeader('Content-Type', 'application/javascript');
+	
+	            var promise = new Promise(request, timeout, {
+	                "url": url,
+	                "method": method
+	            });
+	            request.send();
+	
+	            return promise;
+	        }
+	    }]);
+	
+	    return Ajax;
+	}();
+	
+	exports.default = Ajax;
 
 /***/ }
 /******/ ]);

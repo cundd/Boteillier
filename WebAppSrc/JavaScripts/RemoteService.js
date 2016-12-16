@@ -1,6 +1,7 @@
 /**
  * Created by daniel on 22.10.16.
  */
+import Ajax from './Ajax';
 const EF = () => {
 };
 
@@ -32,31 +33,6 @@ export default class RemoteService {
      * @private
      */
     static _request(url, method, success, error) {
-        const request = new XMLHttpRequest();
-        request.open(method, url, true);
-        request.setRequestHeader('Content-Type', 'application/javascript');
-
-        request.onload = () => {
-            if (request.status >= 200 && request.status < 400) {
-                let data;
-                try {
-                    data = JSON.parse(request.responseText);
-                } catch (exception) {
-                    error(request, {
-                        "exception": exception
-                    });
-                    return;
-                }
-                success(data, request);
-            } else {
-                error(request);
-            }
-        };
-
-        request.onerror = () => {
-            error(request);
-        };
-
-        request.send();
+        Ajax.json(url, method).then(success).else(error)
     }
 }

@@ -1,7 +1,7 @@
 /**
  * Created by daniel on 06.12.16.
  */
-
+import Ajax from './Ajax';
 const EF = () => {
 };
 
@@ -25,10 +25,10 @@ export default class ServiceScanner {
     findServices(serviceAvailable = null) {
         const location = window && window.location;
         const hostname = location.hostname;
-
         const store = this.store;
-
-        const serviceAvailableCallback = (url, data, request) => {
+        const serviceAvailableCallback = function (request, info) {
+            const url = info.url;
+            const data = info.data;
             store.addService(url, data);
 
             if (typeof serviceAvailable === 'function') {
@@ -40,7 +40,7 @@ export default class ServiceScanner {
             let ipParts = hostname.split('.');
 
             const testing = false;
-            if (testing ) {
+            if (testing) {
                 // For testing
                 const lastIpPart = ipParts.pop();
                 this._testIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
@@ -66,39 +66,13 @@ export default class ServiceScanner {
     _testIp(serviceAvailable, ipParts, port, scheme) {
         const url = scheme + '//' + ipParts.join('.') + ':' + port + '/info';
 
-        this._ajax('GET', url, serviceAvailable);
+        this._ajax('GET', url, serviceAvailable, function () {
+            // console.log(arguments)
+        });
     }
 
     _ajax(method, url, success = EF, error = EF) {
-        const request = new XMLHttpRequest();
-        request.open(method, url, true);
-        request.setRequestHeader('Content-Type', 'application/javascript');
-
-        request.onload = function () {
-            if (request.status >= 200 && request.status < 400) {
-                try {
-                    const data = JSON.parse(request.responseText);
-                    success(url, data, request);
-                } catch (exception) {
-                    error(request, {
-                        "exception": exception
-                    });
-                }
-            } else {
-                error(request);
-            }
-        };
-
-        request.onerror = function () {
-            error(request);
-        };
-
-        request.send();
-
-        setTimeout(function () {
-            request.abort();
-            error(request);
-        }, 4000);
+        Ajax.json(url, method).then(success).else(error)
     }
 
     static _range(start, stop, step) {
