@@ -401,6 +401,18 @@ h1 {
   -ms-user-select: none;
   user-select: none; }
 
+[role=button] {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 5px;
+  cursor: pointer;
+  display: inline-block; }
+  [role=button]:hover {
+    color: #240b0e;
+    background: #ff0f4d; }
+
 .service-list-container {
   padding: 10px 20px;
   background: #240b0e; }
@@ -408,11 +420,11 @@ h1 {
     list-style: none;
     padding: 0; }
   .service-list-container .service {
+    display: block;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    display: block;
     padding: 5px;
     cursor: pointer; }
     .service-list-container .service:hover {
@@ -421,3 +433,26 @@ h1 {
   .service-list-container li.active .service {
     color: #240b0e;
     background: #ff0f4d; }
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg); } }
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+.rescan {
+  background: #481318;
+  min-width: 24px;
+  text-align: center; }
+  .rescan.loading span {
+    display: inline-block;
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite; }

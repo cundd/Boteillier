@@ -69,6 +69,23 @@ h1 {
     @include no-select;
 }
 
+
+@mixin button {
+    @include no-select;
+    padding: 5px;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-darker;
+        background: $color;
+    }
+}
+
+[role=button] {
+    @include button;
+    display: inline-block;
+}
+
 .service-list-container {
     padding: 10px 20px;
     background: $color-darker;
@@ -79,19 +96,27 @@ h1 {
     }
 
     .service {
-        @include no-select;
         display: block;
-        padding: 5px;
-        cursor: pointer;
-
-        &:hover {
-            color: $color-darker;
-            background: $color;
-        }
+        @include button;
     }
 
     li.active .service {
         color: $color-darker;
         background: $color;
+    }
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+.rescan {
+    background: $color-dark;
+    min-width: 24px;
+    text-align: center;
+    &.loading span {
+        display: inline-block;
+        -webkit-animation:spin 4s linear infinite;
+        -moz-animation:spin 4s linear infinite;
+        animation:spin 4s linear infinite;
     }
 }

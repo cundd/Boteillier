@@ -11,6 +11,11 @@ export default class ServiceScanner {
          * @type {Store}
          */
         this.store = {};
+
+        /**
+         * @type {string}
+         */
+        this.servicePort = '8181';
     }
 
     static needs() {
@@ -30,71 +35,78 @@ export default class ServiceScanner {
             const url = info.url;
             const data = info.data;
             store.addService(url, data);
+            store.updateState({loading: false})
 
             if (typeof serviceAvailable === 'function') {
                 serviceAvailable(url, data, request);
             }
         };
 
-        if (/^[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}$/.test(hostname)) {
-            let ipParts = hostname.split('.');
+        store.updateState({loading: true});
 
-            const testing = false;
-            if (testing) {
-                // For testing
-                const lastIpPart = ipParts.pop();
-                this._testIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
-            } else {
-                ipParts.pop();
-                this._testIps(serviceAvailableCallback, ipParts, ServiceScanner._range(1, 255), location.port, location.protocol);
-            }
+        if (/^[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}$/.test(hostname)) {
+            this._splitAndTestIps(location, serviceAvailableCallback);
         } else {
-            throw new ReferenceError('Could not determine IP range for hostname "' + hostname + '"');
+            this._readHostIpAndScan(location, serviceAvailableCallback);
         }
     }
 
-    _testIps(serviceAvailable, ipParts, range, port, scheme) {
+    _readHostIpAndScan(location, serviceAvailableCallback) {
+        const localInfoUrl = location.protocol + '//' + location.hostname + ':' + this.servicePort + '/info';
+        Ajax.json(localInfoUrl, 'GET').then(function (request, info) {
+            this._splitAndTestIps(this._createLocationObject(info, location), serviceAvailableCallback);
+        }.bind(this));
+    }
+
+    _createLocationObject(info, location) {
+        return {
+            hostname: info.data.ip,
+            port: this.servicePort,
+            protocol: location.protocol
+        };
+    }
+
+    _splitAndTestIps(location, serviceAvailableCallback) {
+        let ipParts = location.hostname.split('.');
+        const lastIpPart = ipParts.pop();
+
+        const testing = false;
+        if (testing) {
+            // For testing
+            this._scanIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
+        } else {
+            console.log(ServiceScanner._range(lastIpPart, 1, 255))
+            this._scanIps(serviceAvailableCallback, ipParts, ServiceScanner._range(lastIpPart, 1, 255), location.port, location.protocol);
+        }
+    }
+
+    _scanIps(serviceAvailable, ipParts, range, port, scheme) {
         range.forEach(function (ip) {
             const ipElements = ipParts.slice();
             ipElements.push(ip);
 
-            // this._testIp(serviceAvailable, ipElements, port, scheme);
-            this._testIp(serviceAvailable, ipElements, '8181', scheme);
+            // this._scanIp(serviceAvailable, ipElements, port, scheme);
+            this._scanIp(serviceAvailable, ipElements, this.servicePort, scheme);
         }.bind(this));
     }
 
-    _testIp(serviceAvailable, ipParts, port, scheme) {
+    _scanIp(serviceAvailable, ipParts, port, scheme) {
         const url = scheme + '//' + ipParts.join('.') + ':' + port + '/info';
 
-        this._ajax('GET', url, serviceAvailable, function () {
-            // console.log(arguments)
-        });
+        Ajax.json(url, 'GET').then(serviceAvailable);
     }
 
-    _ajax(method, url, success = EF, error = EF) {
-        Ajax.json(url, method).then(success).else(error)
-    }
-
-    static _range(start, stop, step) {
-        if (typeof stop == 'undefined') {
-            // one param defined
-            stop = start;
-            start = 0;
-        }
-
-        if (typeof step == 'undefined') {
-            step = 1;
-        }
-
-        if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
-            return [];
-        }
-
-        let result = [];
-        for (let i = start; step > 0 ? i < stop : i > stop; i += step) {
-            result.push(i);
-        }
-
+    static _range(base, lowerLimit, upperLimit, step = 1) {
+        base = parseInt(base);
+        let result = [base];
+        let lower = base;
+        let upper = base;
+        do {
+            lower -= step;
+            upper += step;
+            result.push(lower);
+            result.push(upper);
+        } while (lowerLimit < lower && upperLimit > upper);
         return result;
     };
 }

@@ -30,7 +30,14 @@ export default class App {
             document.getElementById('button-group').style.display = 'block';
         }.bind(this);
 
-        const root = ReactDOM.render(<ServiceList onServiceClick={onServiceClick}/>, reactRoot);
+        const rescan = function() {
+            console.log('rescan start');
+            this.serviceScanner.findServices(function() {
+                console.log('rescan fin');
+            });
+        }.bind(this);
+
+        const root = ReactDOM.render(<ServiceList onServiceClick={onServiceClick} rescan={rescan}/>, reactRoot);
 
         this.store.registerComponent(root);
     }
