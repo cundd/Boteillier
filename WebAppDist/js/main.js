@@ -3599,10 +3599,7 @@
 	            }.bind(this);
 	
 	            var rescan = function () {
-	                console.log('rescan start');
-	                this.serviceScanner.findServices(function () {
-	                    console.log('rescan fin');
-	                });
+	                this.serviceScanner.findServices();
 	            }.bind(this);
 	
 	            var root = _reactDom2.default.render(_react2.default.createElement(_ServiceList2.default, { onServiceClick: onServiceClick, rescan: rescan }), reactRoot);
@@ -27891,7 +27888,6 @@
 	                // For testing
 	                this._scanIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
 	            } else {
-	                console.log(ServiceScanner._range(lastIpPart, 1, 255));
 	                this._scanIps(serviceAvailableCallback, ipParts, ServiceScanner._range(lastIpPart, 1, 255), location.port, location.protocol);
 	            }
 	        }

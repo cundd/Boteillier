@@ -31,10 +31,7 @@ export default class App {
         }.bind(this);
 
         const rescan = function() {
-            console.log('rescan start');
-            this.serviceScanner.findServices(function() {
-                console.log('rescan fin');
-            });
+            this.serviceScanner.findServices();
         }.bind(this);
 
         const root = ReactDOM.render(<ServiceList onServiceClick={onServiceClick} rescan={rescan}/>, reactRoot);

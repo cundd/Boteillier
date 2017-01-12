@@ -1,0 +1,15 @@
+CACHE MANIFEST
+# 2016-12-12 21:09:47
+
+CACHE:
+/favicon.ico
+index.html
+css/main.css
+js/main.js
+js/vendor/modernizr-2.8.3-respond-1.4.2.min.js
+
+FALLBACK:
+/ /index.html
+
+NETWORK:
+info/

@@ -30,6 +30,8 @@
 		655703E01DE08ADF0089E887 /* PerfectHTTPServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_755 /* PerfectHTTPServer.framework */; };
 		655703E11DE08ADF0089E887 /* PerfectHTTPServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_755 /* PerfectHTTPServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		655703E91DE090580089E887 /* WebAppDist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 655703E71DE090430089E887 /* WebAppDist */; };
+		656CABB41E01D63300C0244B /* BonjourService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CABB21E01D62C00C0244B /* BonjourService.swift */; };
+		656CABB51E01D63400C0244B /* BonjourService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CABB21E01D62C00C0244B /* BonjourService.swift */; };
 		OBJ_1000 /* e_capi_err.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_241 /* e_capi_err.c */; };
 		OBJ_1001 /* e_cast.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_242 /* e_cast.c */; };
 		OBJ_1002 /* e_chil.c in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_243 /* e_chil.c */; };
@@ -1043,6 +1045,7 @@
 		655703B61DE07AC80089E887 /* BoteillierUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoteillierUITests.swift; sourceTree = "<group>"; };
 		655703B81DE07AC80089E887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		655703E71DE090430089E887 /* WebAppDist */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WebAppDist; sourceTree = "<group>"; };
+		656CABB21E01D62C00C0244B /* BonjourService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BonjourService.swift; sourceTree = "<group>"; };
 		65FDF71F1DDCE76A000D5D0A /* Boteillier-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Boteillier-Bridging-Header.h"; sourceTree = "<group>"; };
 		OBJ_10 /* Dir.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dir.swift; sourceTree = "<group>"; };
 		OBJ_100 /* bn_mul.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bn_mul.c; sourceTree = "<group>"; };
@@ -2717,6 +2720,7 @@
 				65FDF71F1DDCE76A000D5D0A /* Boteillier-Bridging-Header.h */,
 				OBJ_736 /* KeyCode.swift */,
 				OBJ_737 /* KeySender.swift */,
+				656CABB21E01D62C00C0244B /* BonjourService.swift */,
 				OBJ_738 /* main.swift */,
 				OBJ_739 /* NetworkService.swift */,
 				OBJ_740 /* ServerBootstrap.swift */,
@@ -3065,6 +3069,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655703C11DE07B790089E887 /* KeyCode.swift in Sources */,
+				656CABB41E01D63300C0244B /* BonjourService.swift in Sources */,
 				655703C21DE07B7B0089E887 /* KeySender.swift in Sources */,
 				655703BF1DE07B6F0089E887 /* NetworkService.swift in Sources */,
 				655703C01DE07B730089E887 /* ServerBootstrap.swift in Sources */,
@@ -3142,6 +3147,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_1554 /* KeyCode.swift in Sources */,
+				656CABB51E01D63400C0244B /* BonjourService.swift in Sources */,
 				OBJ_1555 /* KeySender.swift in Sources */,
 				OBJ_1556 /* main.swift in Sources */,
 				OBJ_1557 /* NetworkService.swift in Sources */,
@@ -4659,6 +4665,7 @@
 				655703BB1DE07AC80089E887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		655703BC1DE07AC80089E887 /* Build configuration list for PBXNativeTarget "BoteillierUITests" */ = {
 			isa = XCConfigurationList;
@@ -4667,6 +4674,7 @@
 				655703BE1DE07AC80089E887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		OBJ_1463 /* Build configuration list for PBXNativeTarget "PerfectThread" */ = {
 			isa = XCConfigurationList;

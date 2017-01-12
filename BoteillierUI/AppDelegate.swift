@@ -54,6 +54,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         createStatusItem()
         prepareInfoText()
+        
+        
+        
     }
     
     func prepareInfoText() {

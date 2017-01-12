@@ -185,8 +185,6 @@ struct ServerBootstrap {
         }
         routes.add(method: .get, uri: "/info") {
             request, response in
-            
-            
             let data = self.buildServiceInfo(server:server)
             
             response.addHeader(HTTPResponseHeader.Name.accessControlAllowOrigin, value: "*")
@@ -244,7 +242,16 @@ struct ServerBootstrap {
             "hostName": Host.current().localizedName ?? "",
             "ip": self.getFirstAddress(),
             "url": url,
+            "version": self.getAppVersion()
         ]
+    }
+    
+    private static func getAppVersion() -> String {
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"]
+        if let versionString = version as? String {
+            return versionString
+        }
+        return ""
     }
     
     private static func setCorsHeaders(_ response: HTTPResponse, allowedMethods: String = "GET") {

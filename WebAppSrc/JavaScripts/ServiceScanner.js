@@ -75,7 +75,6 @@ export default class ServiceScanner {
             // For testing
             this._scanIps(serviceAvailableCallback, ipParts, [lastIpPart], location.port, location.protocol);
         } else {
-            console.log(ServiceScanner._range(lastIpPart, 1, 255))
             this._scanIps(serviceAvailableCallback, ipParts, ServiceScanner._range(lastIpPart, 1, 255), location.port, location.protocol);
         }
     }
